@@ -14,7 +14,8 @@ pipeline {
 
         stage('pm2 start') {
             steps {
-                sh 'npm start'
+                sh 'npm install'
+                sh 'npm start index.js'
             }
         }
     }
