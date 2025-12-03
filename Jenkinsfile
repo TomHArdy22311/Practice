@@ -20,6 +20,7 @@ pipeline {
 
         stage('pm2 start') {
             steps {
+                sh 'npm i'
                 sh 'pm2 start index.js --name Rock'
             }
         }
