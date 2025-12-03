@@ -20,7 +20,7 @@ pipeline {
 
         stage('pm2 start') {
             steps {
-                sh 'ls'
+                sh 'pm2 status'
             }
         }
     }
