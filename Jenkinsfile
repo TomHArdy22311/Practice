@@ -6,8 +6,14 @@ pipeline {
     }
 
     stages {
+        stage('Git') {
+            steps {
+                git branch: 'main', url: 'https://github.com/TomHArdy22311/Practice.git'
+            }
+        }
+
         stage('pm2 installation') {
-            steps{
+            steps {
                 sh 'npm i pm2 -g'
             }
         }
