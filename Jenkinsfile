@@ -12,9 +12,17 @@ pipeline {
             }
         }
 
+        stage('pm2 installation') {
+            steps {
+                sh 'npm i pm2 -g'
+            }
+        }
+
         stage('pm2 start') {
             steps {
-                sh 'npm start index.js'
+                sh 'pm2 status'
+                sh 'pm2 start index.js --name Practice'
+                sh 'pm2 status'
             }
         }
     }
